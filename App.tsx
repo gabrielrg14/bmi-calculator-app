@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from "react-native";
 
-export default function App() {
+import Title from "./src/components/Title";
+import Form from "./src/components/Form";
+
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Title text="BMI Calculator" />
+      <Form />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#E0E5E5",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: 100,
   },
 });
+
+export default App;
