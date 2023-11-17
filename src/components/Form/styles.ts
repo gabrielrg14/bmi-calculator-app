@@ -4,21 +4,25 @@ const styles = StyleSheet.create({
   viewForm: {
     width: "100%",
     height: "100%",
-    bottom: 0,
     backgroundColor: "#FFF",
     alignItems: "center",
+    paddingTop: 30,
+    paddingHorizontal: 50,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30
   },
   boxForm: {
-    width: "100%",
-    height: "auto",
-    marginTop: 30,
-    paddingHorizontal: 50
+    width: "100%"
   },
   textLabel: {
     color: "#000",
     fontSize: 18,
+    paddingLeft: 5
+  },
+  textValidation: {
+    fontSize: 12,
+    color: "red",
+    fontWeight: "bold",
     paddingLeft: 5
   },
   textInput: {

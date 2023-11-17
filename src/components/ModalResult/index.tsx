@@ -1,4 +1,4 @@
-import { Modal, View, Text, Pressable } from "react-native";
+import { Share, Modal, View, Text, TouchableOpacity } from "react-native";
 
 import styles from "./styles";
 
@@ -15,6 +15,13 @@ const ModalResult = ({
   message,
   bmi,
 }: ModalResultProps) => {
+
+  const onShare = async () => {
+    await Share.share({
+      message: `I calculated my BMI today using the bmi-calculator-app, check the result: ${bmi} (${message})`,
+    });
+  };
+
   return (
     <Modal
       animationType="slide"
@@ -25,12 +32,20 @@ const ModalResult = ({
         <View style={styles.modalView}>
           {bmi && <Text style={styles.bmiText}>{bmi}</Text>}
           <Text style={styles.messageText}>{message}</Text>
-          <Pressable
-            style={styles.modalButton}
-            onPress={() => setVisible(!visible)}
-          >
-            <Text style={styles.buttonText}>Close</Text>
-          </Pressable>
+          <View style={styles.buttonsView}>
+            {bmi && (
+              <TouchableOpacity style={styles.buttonShare} onPress={onShare}>
+                <Text style={styles.buttonText}>Share</Text>
+              </TouchableOpacity>
+            )}
+
+            <TouchableOpacity
+              style={styles.buttonClose}
+              onPress={() => setVisible(!visible)}
+            >
+              <Text style={styles.buttonText}>Close</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </Modal>

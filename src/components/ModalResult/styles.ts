@@ -30,16 +30,26 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 15
   },
-  modalButton: {
+  buttonsView: {
+    width: "100%",
+    alignItems: "center",
+    gap: 5
+  },
+  buttonShare: {
     borderRadius: 5,
     elevation: 3,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    backgroundColor: "#1877f2"
+  },
+  buttonClose: {
+    borderRadius: 5,
+    elevation: 3,
     backgroundColor: "#18a330"
   },
   buttonText: {
+    color: "#FFF",
     fontSize: 20,
-    color: "#FFF"
+    paddingVertical: 10,
+    paddingHorizontal: 30
   }
 })
 
