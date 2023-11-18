@@ -1,16 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  viewForm: {
-    width: "100%",
-    height: "100%",
-    backgroundColor: "#FFF",
-    alignItems: "center",
-    paddingTop: 30,
-    paddingHorizontal: 50,
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30
-  },
   boxForm: {
     width: "100%"
   },

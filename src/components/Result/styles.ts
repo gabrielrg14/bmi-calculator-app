@@ -22,12 +22,12 @@ const styles = StyleSheet.create({
   },
   bmiText: {
     color: "#000",
-    fontSize: 20,
-    fontWeight: "bold"
+    fontSize: 20
   },
   messageText: {
     color: "#000",
     fontSize: 20,
+    fontWeight: "bold",
     marginBottom: 15
   },
   buttonsView: {

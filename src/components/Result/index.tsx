@@ -2,20 +2,14 @@ import { Share, Modal, View, Text, TouchableOpacity } from "react-native";
 
 import styles from "./styles";
 
-type ModalResultProps = {
+type ResultProps = {
   visible: boolean;
   setVisible: (visible: boolean) => void;
   bmi: string | null;
   message: string;
 };
 
-const ModalResult = ({
-  visible,
-  setVisible,
-  message,
-  bmi,
-}: ModalResultProps) => {
-
+const Result = ({ visible, setVisible, message, bmi }: ResultProps) => {
   const onShare = async () => {
     await Share.share({
       message: `I calculated my BMI today using the bmi-calculator-app, check the result: ${bmi} (${message})`,
@@ -52,4 +46,4 @@ const ModalResult = ({
   );
 };
 
-export default ModalResult;
+export default Result;
