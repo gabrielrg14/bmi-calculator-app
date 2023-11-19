@@ -1,6 +1,4 @@
-import { View, Text } from "react-native";
-
-import styles from "./styles";
+import * as S from "./styles";
 
 type TitleProps = {
   text: string;
@@ -8,9 +6,9 @@ type TitleProps = {
 
 const Title = ({ text }: TitleProps) => {
   return (
-    <View style={styles.boxTitle}>
-      <Text style={styles.textTitle}>{text}</Text>
-    </View>
+    <S.Wrapper>
+      <S.Title>{text}</S.Title>
+    </S.Wrapper>
   );
 };
 

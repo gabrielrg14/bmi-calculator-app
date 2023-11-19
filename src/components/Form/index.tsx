@@ -1,13 +1,7 @@
 import { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Vibration,
-} from "react-native";
+import { Vibration } from "react-native";
 
-import styles from "./styles";
+import * as S from "./styles";
 
 type FormProps = {
   showModal: () => void;
@@ -64,13 +58,10 @@ const Form = ({ showModal, setBmiResult }: FormProps) => {
   };
 
   return (
-    <View style={styles.boxForm}>
-      <Text style={styles.textLabel}>Height (cm)</Text>
-      {validation.height && (
-        <Text style={styles.textValidation}>{requiredMessage}</Text>
-      )}
-      <TextInput
-        style={styles.textInput}
+    <S.Wrapper>
+      <S.Label>Height (cm)</S.Label>
+      {validation.height && <S.Validation>{requiredMessage}</S.Validation>}
+      <S.Input
         placeholder="Ex. 175"
         keyboardType="numeric"
         value={values.height}
@@ -79,12 +70,9 @@ const Form = ({ showModal, setBmiResult }: FormProps) => {
         }
       />
 
-      <Text style={styles.textLabel}>Weight (kg)</Text>
-      {validation.weight && (
-        <Text style={styles.textValidation}>{requiredMessage}</Text>
-      )}
-      <TextInput
-        style={styles.textInput}
+      <S.Label>Weight (kg)</S.Label>
+      {validation.weight && <S.Validation>{requiredMessage}</S.Validation>}
+      <S.Input
         placeholder="Ex. 80.5"
         keyboardType="numeric"
         value={values.weight}
@@ -93,13 +81,10 @@ const Form = ({ showModal, setBmiResult }: FormProps) => {
         }
       />
 
-      <TouchableOpacity
-        style={styles.buttonCalculate}
-        onPress={() => handleCalculate()}
-      >
-        <Text style={styles.textButtonCalculate}>Calculate</Text>
-      </TouchableOpacity>
-    </View>
+      <S.ButtonCalculate onPress={() => handleCalculate()}>
+        <S.TextButton>Calculate</S.TextButton>
+      </S.ButtonCalculate>
+    </S.Wrapper>
   );
 };
 

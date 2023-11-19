@@ -1,23 +1,21 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#161817",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop: 100,
-  },
-  formList: {
-    width: "100%",
-    height: "100%",
-    backgroundColor: "#FFF",
-    alignItems: "center",
-    paddingTop: 30,
-    paddingHorizontal: 50,
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30
-  },
-});
+export const Wrapper = styled.SafeAreaView`
+  flex: 1;
+  background-color: #161817;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+`;
 
-export default styles
+export const FormList = styled.Pressable`
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  align-items: center;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+`;

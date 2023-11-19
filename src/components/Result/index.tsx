@@ -1,6 +1,6 @@
-import { Share, Modal, View, Text, TouchableOpacity } from "react-native";
+import { Modal, Share } from "react-native";
 
-import styles from "./styles";
+import * as S from "./styles";
 
 type ResultProps = {
   visible: boolean;
@@ -22,26 +22,23 @@ const Result = ({ visible, setVisible, message, bmi }: ResultProps) => {
       visible={visible}
       onRequestClose={() => setVisible(!visible)}
     >
-      <View style={styles.centeredView}>
-        <View style={styles.modalView}>
-          {bmi && <Text style={styles.bmiText}>{bmi}</Text>}
-          <Text style={styles.messageText}>{message}</Text>
-          <View style={styles.buttonsView}>
+      <S.Wrapper>
+        <S.ModalView>
+          {bmi && <S.BmiText>{bmi}</S.BmiText>}
+          <S.MessageText>{message}</S.MessageText>
+          <S.ButtonsView>
             {bmi && (
-              <TouchableOpacity style={styles.buttonShare} onPress={onShare}>
-                <Text style={styles.buttonText}>Share</Text>
-              </TouchableOpacity>
+              <S.ButtonShare onPress={onShare}>
+                <S.ButtonText>Share</S.ButtonText>
+              </S.ButtonShare>
             )}
 
-            <TouchableOpacity
-              style={styles.buttonClose}
-              onPress={() => setVisible(!visible)}
-            >
-              <Text style={styles.buttonText}>Close</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
+            <S.ButtonClose onPress={() => setVisible(!visible)}>
+              <S.ButtonText>Close</S.ButtonText>
+            </S.ButtonClose>
+          </S.ButtonsView>
+        </S.ModalView>
+      </S.Wrapper>
     </Modal>
   );
 };

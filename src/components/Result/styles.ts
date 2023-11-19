@@ -1,56 +1,49 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native'
 
-const styles = StyleSheet.create({
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  modalView: {
-    backgroundColor: "#FFF",
-    borderRadius: 10,
-    padding: 30,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5
-  },
-  bmiText: {
-    color: "#000",
-    fontSize: 20
-  },
-  messageText: {
-    color: "#000",
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 15
-  },
-  buttonsView: {
-    width: "100%",
-    alignItems: "center",
-    gap: 5
-  },
-  buttonShare: {
-    borderRadius: 5,
-    elevation: 3,
-    backgroundColor: "#1877f2"
-  },
-  buttonClose: {
-    borderRadius: 5,
-    elevation: 3,
-    backgroundColor: "#18a330"
-  },
-  buttonText: {
-    color: "#FFF",
-    fontSize: 20,
-    paddingVertical: 10,
-    paddingHorizontal: 30
-  }
-})
+export const Wrapper = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
 
-export default styles
+export const ModalView = styled.View`
+  background-color: #FFF;
+  border-radius: 10px;
+  padding: 30px;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+`;
+
+export const BmiText = styled.Text`
+  color: #000;
+  font-size: 20px;
+`;
+
+export const MessageText = styled.Text`
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+`;
+
+export const ButtonsView = styled.View`
+  width: 100%;
+  align-items: center;
+  gap: 5px;
+`;
+
+export const ButtonShare = styled.TouchableOpacity`
+  border-radius: 5px;
+  background-color: #1877f2;
+`;
+
+export const ButtonClose = styled.TouchableOpacity`
+  border-radius: 5px;
+  background-color: #18a330;
+`;
+
+export const ButtonText = styled.Text`
+  color: #FFF;
+  font-size: 20px;
+  padding: 10px 30px;
+`;

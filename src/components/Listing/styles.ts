@@ -1,21 +1,20 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native'
 
-const styles = StyleSheet.create({
-  listingView: {
-    marginTop: 30,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  listEmptyText: {
-    fontSize: 18,
-  },
-  bmiText: {
-    height: 45,
-    fontSize: 18
-  },
-  messageText: {
-    fontWeight: "bold",
-  }
-});
+export const Wrapper = styled.View`
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+`;
 
-export default styles
+export const EmptyText = styled.Text`
+  font-size: 18px;
+`;
+
+export const ResultItem = styled.Text`
+  height: 45px;
+  font-size: 18px;
+`;
+
+export const ItemMessage = styled.Text`
+  font-weight: bold;
+`;

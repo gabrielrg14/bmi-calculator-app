@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { SafeAreaView, Pressable, Keyboard } from "react-native";
+import { Keyboard } from "react-native";
 
-import styles from "./styles";
+import * as S from "./styles";
 
 import { BmiResult } from "../../@types/BmiResult";
 
@@ -23,16 +23,16 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <S.Wrapper>
       <Title text="BMI Calculator" />
 
-      <Pressable style={styles.formList} onPress={Keyboard.dismiss}>
+      <S.FormList onPress={Keyboard.dismiss}>
         <Form
           showModal={() => setModalVisible(true)}
           setBmiResult={handleBmiResult}
         />
         <Listing list={bmiList} />
-      </Pressable>
+      </S.FormList>
 
       {modalVisible && (
         <ModalResult
@@ -42,7 +42,7 @@ const App = () => {
           message={resultMessage}
         />
       )}
-    </SafeAreaView>
+    </S.Wrapper>
   );
 };
 

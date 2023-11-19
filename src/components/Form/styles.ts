@@ -1,40 +1,40 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native'
 
-const styles = StyleSheet.create({
-  boxForm: {
-    width: "100%"
-  },
-  textLabel: {
-    color: "#000",
-    fontSize: 18,
-    paddingLeft: 5
-  },
-  textValidation: {
-    fontSize: 12,
-    color: "red",
-    fontWeight: "bold",
-    paddingLeft: 5
-  },
-  textInput: {
-    height: 40,
-    paddingLeft: 10,
-    marginVertical: 10,
-    borderRadius: 50,
-    backgroundColor: "#F6F6F6"
-  },
-  buttonCalculate: {
-    borderRadius: 50,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    marginTop: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#18a330"
-  },
-  textButtonCalculate: {
-    fontSize: 20,
-    color: "#FFF"
-  }
-})
+export const Wrapper = styled.View`
+  width: 100%;
+`;
 
-export default styles
+export const Label = styled.Text`
+  color: #000;
+  font-size: 18px;
+  padding-left: 5px;
+`;
+
+export const Validation = styled.Text`
+  font-size: 12px;
+  color: red;
+  font-weight: bold;
+  padding-left: 5px;
+`;
+
+export const Input = styled.TextInput`
+  height: 40px;
+  padding-left: 10px;
+  margin: 10px 0px;
+  border-radius: 50px;
+  background-color: #F6F6F6;
+`;
+
+export const ButtonCalculate = styled.TouchableOpacity`
+  border-radius: 50px;
+  padding: 10px;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: #18a330;
+`;
+
+export const TextButton = styled.Text`
+  font-size: 20px;
+  color: #FFF;
+`;

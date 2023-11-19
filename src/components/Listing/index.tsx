@@ -1,6 +1,6 @@
-import { View, Text, FlatList } from "react-native";
+import { FlatList } from "react-native";
 
-import styles from "./styles";
+import * as S from "./styles";
 
 import { BmiResult } from "../../@types/BmiResult";
 
@@ -10,23 +10,21 @@ type ListingProps = {
 
 const Listing = ({ list }: ListingProps) => {
   return (
-    <View style={styles.listingView}>
+    <S.Wrapper>
       <FlatList
         showsVerticalScrollIndicator={false}
         data={[...list].reverse()}
         ListEmptyComponent={() => (
-          <Text style={styles.listEmptyText}>
-            Calculate to display results here
-          </Text>
+          <S.EmptyText>Calculate to display results here</S.EmptyText>
         )}
         renderItem={({ item }) => (
-          <Text style={styles.bmiText}>
-            {item.bmi} <Text style={styles.messageText}>({item.message})</Text>
-          </Text>
+          <S.ResultItem>
+            {item.bmi} <S.ItemMessage>({item.message})</S.ItemMessage>
+          </S.ResultItem>
         )}
         keyExtractor={({ id }) => id.toString()}
       />
-    </View>
+    </S.Wrapper>
   );
 };
 
