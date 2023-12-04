@@ -3,12 +3,12 @@ import { Keyboard } from "react-native";
 
 import * as S from "./styles";
 
-import { BmiResult } from "../../@types/BmiResult";
+import { BmiResult } from "../@types/BmiResult";
 
-import Title from "../Title";
-import Form from "../Form";
-import Listing from "../Listing";
-import ModalResult from "../Result";
+import Title from "../components/Title";
+import Form from "../components/Form";
+import Listing from "../components/Listing";
+import ModalResult from "../components/Result";
 
 const App = () => {
   const [modalVisible, setModalVisible] = useState(false);
