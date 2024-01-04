@@ -18,6 +18,7 @@ const Result = ({ visible, setVisible, message, bmi }: ResultProps) => {
 
   return (
     <Modal
+      testID="resultModal"
       animationType="slide"
       visible={visible}
       onRequestClose={() => setVisible(!visible)}
@@ -28,12 +29,19 @@ const Result = ({ visible, setVisible, message, bmi }: ResultProps) => {
           <S.MessageText>{message}</S.MessageText>
           <S.ButtonsView>
             {bmi && (
-              <S.ButtonShare onPress={onShare}>
+              <S.ButtonShare
+                accessibilityRole="button"
+                onPress={onShare}
+              >
                 <S.ButtonText>Share</S.ButtonText>
               </S.ButtonShare>
             )}
 
-            <S.ButtonClose onPress={() => setVisible(!visible)}>
+            <S.ButtonClose
+              testID="closeButton"
+              accessibilityRole="button"
+              onPress={() => setVisible(!visible)}
+            >
               <S.ButtonText>Close</S.ButtonText>
             </S.ButtonClose>
           </S.ButtonsView>

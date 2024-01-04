@@ -81,7 +81,10 @@ const Form = ({ showModal, setBmiResult }: FormProps) => {
         }
       />
 
-      <S.ButtonCalculate onPress={() => handleCalculate()}>
+      <S.ButtonCalculate
+        accessibilityRole="button"
+        onPress={() => handleCalculate()}
+      >
         <S.TextButton>Calculate</S.TextButton>
       </S.ButtonCalculate>
     </S.Wrapper>
