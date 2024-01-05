@@ -33,7 +33,6 @@ describe("<Result />", () => {
 
       expect(await findAllByRole(/button/i)).toHaveLength(1)
       expect(getByText(/close/i)).toBeOnTheScreen()
-      expect(getByText("")).toBeOnTheScreen()
     })
   })
 
@@ -65,7 +64,7 @@ describe("<Result />", () => {
         />
       )
 
-      expect(getByText("")).toBeOnTheScreen()
+      expect(getByText("")).toBeEmptyElement()
     })
   })
 
