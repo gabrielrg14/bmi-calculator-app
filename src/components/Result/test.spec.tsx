@@ -1,4 +1,5 @@
 import { render, fireEvent } from "@testing-library/react-native"
+import { Share } from "react-native";
 
 import Result from "."
 
@@ -18,6 +19,23 @@ describe("<Result />", () => {
     fireEvent.press(await findByTestId(/closeButton/i))
 
     expect(setVisibleMock).toHaveBeenCalled()
+  })
+
+  it("should call the function when the share button is pressed", async () => {
+    const { findByTestId } = render(
+      <Result
+        visible={true}
+        setVisible={setVisibleMock}
+        bmi={"27.2"}
+        message={"Overweight"}
+      />
+    )
+
+    const shareFn = jest.spyOn(Share, "share")
+
+    fireEvent.press(await findByTestId(/shareButton/i))
+
+    expect(shareFn).toHaveBeenCalledWith({ message: "I calculated my BMI today using the bmi-calculator-app, check the result: 27.2 (Overweight)" })
   })
 
   describe("the bmi prop is null", () => {

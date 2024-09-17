@@ -30,6 +30,7 @@ const Result = ({ visible, setVisible, message, bmi }: ResultProps) => {
           <S.ButtonsView>
             {bmi && (
               <S.ButtonShare
+                testID="shareButton"
                 accessibilityRole="button"
                 onPress={onShare}
               >
